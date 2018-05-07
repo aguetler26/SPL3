@@ -35,6 +35,21 @@ public class TemperaturMittelwert {
 		System.out.println(ueber20Grad+" Werte über 20 Grad.");
 
 		System.out.println("Gesamt Werte: " + (ueber20Grad + zwischen10und20Grad + unter10Grad));
-	}
+		
+		// mit Unterprogrammen auswerten!
+		System.out.println(getTemperaturWerteAnzahl(temp, 0, 10) + " Werte unter 10 Grad.");
+		System.out.println(getTemperaturWerteAnzahl(temp, 10, 20) + " Werte zwischen 10 und 20 Grad.");
+		System.out.println(getTemperaturWerteAnzahl(temp, 20, 41) + " Werte über 20 Grad.");
 
+	}
+	
+	public static int getTemperaturWerteAnzahl(int tempWert[], int von, int bis) {
+		int anzahl = 0;
+		for (int t = 0; t < tempWert.length; t++) {
+			if (tempWert[t] >= von && tempWert[t] < bis) {
+				anzahl++;
+			}
+		}
+		return anzahl;
+	}
 }
